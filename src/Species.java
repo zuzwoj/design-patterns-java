@@ -1,0 +1,1 @@
+public enum Species { Dog, Cat, Otter }
