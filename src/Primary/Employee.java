@@ -1,5 +1,16 @@
 package Primary;
 
-public class Employee {
-    
+public class Employee extends Comparables.Employee {
+    public String name;
+    public String surname;
+
+    public Employee (String n, String s)
+    {
+        name = n;
+        surname = s;
+    }
+    public String getName() { return name; }
+    public String getSurname() { return surname; }
+    public void setName(String newName) { name = newName; }
+    public void setSurname(String newSurname) { surname = newSurname; }
 }
