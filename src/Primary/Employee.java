@@ -1,8 +1,8 @@
 package Primary;
 
 public class Employee extends Comparables.Employee {
-    public String name;
-    public String surname;
+    private String name;
+    private String surname;
 
     public Employee (String n, String s)
     {
