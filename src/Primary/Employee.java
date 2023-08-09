@@ -4,8 +4,7 @@ public class Employee extends Comparables.Employee {
     private String name;
     private String surname;
 
-    public Employee (String n, String s)
-    {
+    public Employee (String n, String s) {
         name = n;
         surname = s;
     }

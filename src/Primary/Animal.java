@@ -7,8 +7,7 @@ public class Animal extends Comparables.Animal {
     private int age;
     private Species species;
 
-    public Animal(String n, int a, Species s)
-    {
+    public Animal(String n, int a, Species s) {
         name = n;
         age = a;
         species = s;
