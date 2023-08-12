@@ -12,7 +12,7 @@ public interface Command {
     }
 
     String getName();
-    CommandArguments getArguments();
+    String[] getArguments();
     void Execute();
     String ToString();
 }
