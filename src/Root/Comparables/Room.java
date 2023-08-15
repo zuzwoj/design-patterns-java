@@ -7,6 +7,7 @@ public abstract class Room implements Root.Interfaces.Object, Root.Interfaces.Ro
     public abstract void setNumber(int number);
     public abstract Root.Primary.Employee getResponsibleEmployee();
     public abstract void setResponsibleEmployee(Root.Primary.Employee employee);
+    public abstract Root.Interfaces.Object clone();
     public String Print() { return "ROOM: number: " + getNumber() + ", employee: " + getResponsibleEmployee(); }
 
     public boolean meetsCondition(String condition) {

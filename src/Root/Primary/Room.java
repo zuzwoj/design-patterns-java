@@ -14,4 +14,11 @@ public class Room extends Root.Comparables.Room {
     public Root.Primary.Employee getResponsibleEmployee() { return responsibleEmployee; }
     public int getAnimalsCount() { return animals.size(); }
     public void setResponsibleEmployee(String employee) { }
+
+    public Root.Interfaces.Object clone() { 
+        Room copy = new Room(getNumber());
+        copy.setResponsibleEmployee(getResponsibleEmployee());
+        for (Root.Primary.Animal elem : animals) copy.assignAnimal(elem);
+        return copy;
+    }
 }

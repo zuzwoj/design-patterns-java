@@ -7,6 +7,7 @@ public abstract class Employee implements Root.Interfaces.Object, Root.Interface
     public abstract void setName(String name);
     public abstract String getSurname();
     public abstract void setSurname(String name);
+    public abstract Root.Interfaces.Object clone();
     public String Print() { return "EMPLOYEE: name: " + getName() + ", surname: " + getSurname(); }
 
     public boolean meetsCondition(String condition) {

@@ -6,4 +6,5 @@ public interface Object {
     boolean meetsCondition(String condition);
     String[] getFields();
     void setProperty(String key, String value);
+    Object clone();
 }

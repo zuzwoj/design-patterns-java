@@ -9,6 +9,7 @@ public abstract class Animal implements Root.Interfaces.Object, Root.Interfaces.
     public abstract void setName(String name);
     public abstract Root.Primary.Animal.Species getSpecies();
     public abstract void setSpecies(Root.Primary.Animal.Species name);
+    public abstract Root.Interfaces.Object clone();
     public String Print() { return "ANIMAL: number: " + getName() + ", age: " + getAge() + ", species: " + getSpecies(); }
 
     public boolean meetsCondition(String condition) {

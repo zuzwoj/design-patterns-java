@@ -10,4 +10,5 @@ public class Animal extends Root.Comparables.Animal {
     public void setAge(int age) { adaptee.Map.replace("age", String.valueOf(age)); }
     public Species getSpecies() { return Root.Primary.Animal.Species.valueOf(adaptee.Map.get("species")); }
     public void setSpecies(Species species) { adaptee.Map.replace("species", species.toString()); }
+    public Root.Interfaces.Object clone() { return new Animal(new Root.Secondary.Animal(getName(), String.valueOf(getAge()), getSpecies().toString())); }
 }

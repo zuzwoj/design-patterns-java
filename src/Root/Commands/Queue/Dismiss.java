@@ -2,7 +2,7 @@ package Root.Commands.Queue;
 import java.util.Queue;
 
 public class Dismiss extends Root.Commands.Generic {
-    private Root.Interfaces.Command.CommandArguments args;
+    private Root.Interfaces.Command.CommandArguments args = new Root.Interfaces.Command.CommandArguments("", new String[0]);
     private Queue<Root.Commands.Generic> commandQueue;
 
     public Dismiss(Queue<Root.Commands.Generic> commandQueue) { this.commandQueue = commandQueue; }

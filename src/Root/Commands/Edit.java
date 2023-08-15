@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public class Edit extends Generic {
     public HashMap<String, Root.Interfaces.Collection<Root.Interfaces.Object>> map;
     public ArrayList<String> modifiers = new ArrayList<String>();
-    private Root.Interfaces.Command.CommandArguments args;
+    private Root.Interfaces.Command.CommandArguments args = new Root.Interfaces.Command.CommandArguments("", new String[0]);
 
     public Edit() { }
     public Edit(HashMap<String, Root.Interfaces.Collection<Root.Interfaces.Object>> map) { this.map = map; }

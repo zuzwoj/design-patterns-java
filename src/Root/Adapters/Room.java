@@ -9,6 +9,10 @@ public class Room extends Root.Comparables.Room {
     public void setNumber(int number) { adaptee.Map.replace("number", String.valueOf(number)); }
     public int getAnimalsCount() { return Integer.parseInt(adaptee.Map.get("animals.Size()")); }
 
+    public Root.Interfaces.Object clone() { 
+        return new Room(new Root.Secondary.Room(String.valueOf(getNumber()), getResponsibleEmployee().getName() + " " + getResponsibleEmployee().getSurname(), new String[0]));
+    }
+
     public void setResponsibleEmployee(Employee employee) {
         adaptee.Map.replace("employee", employee.getName() + " " + employee.getSurname());
     }

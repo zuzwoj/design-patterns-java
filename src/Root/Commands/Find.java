@@ -2,7 +2,7 @@ package Root.Commands;
 import java.util.HashMap;
 
 public class Find extends Generic {
-    private Root.Interfaces.Command.CommandArguments args;
+    private Root.Interfaces.Command.CommandArguments args = new Root.Interfaces.Command.CommandArguments("", new String[0]);
     public HashMap<String, Root.Interfaces.Collection<Root.Interfaces.Object>> map;
 
     public Find() { }

@@ -25,7 +25,7 @@ public class Command {
     public Root.Commands.Generic CreateCommand(Root.Interfaces.Command.CommandArguments commandArguments) {
         Root.Commands.Generic result = null;
         for (Root.Commands.Generic elem : availableCommands) {
-            if (elem.getName() == commandArguments.CommandName) {
+            if (elem.getName().equals(commandArguments.CommandName)) {
                 result = elem;
                 break;
             }

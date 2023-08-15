@@ -3,7 +3,7 @@ import java.util.Queue;
 
 public class Print extends Root.Commands.Generic {
     private Queue<Root.Commands.Generic> commandQueue;
-    private Root.Interfaces.Command.CommandArguments args;
+    private Root.Interfaces.Command.CommandArguments args = new Root.Interfaces.Command.CommandArguments("", new String[0]);
 
     public Print(Queue<Root.Commands.Generic> commandQueue) { this.commandQueue = commandQueue; }
     public String getName() { return "queue print"; }

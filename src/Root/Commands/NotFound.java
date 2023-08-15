@@ -1,7 +1,7 @@
 package Root.Commands;
 
 public class NotFound extends Generic{
-    private Root.Interfaces.Command.CommandArguments args;
+    private Root.Interfaces.Command.CommandArguments args = new Root.Interfaces.Command.CommandArguments("", new String[0]);
     public String getName() { return args.CommandName; }
     public void setName(String name) { args.CommandName = name; }
     public String[] getArguments() { return args.Arguments; }

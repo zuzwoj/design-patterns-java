@@ -1,7 +1,7 @@
 package Root.Commands;
 
 public class Exit extends Generic {
-    private Root.Interfaces.Command.CommandArguments args;
+    private Root.Interfaces.Command.CommandArguments args = new Root.Interfaces.Command.CommandArguments("", new String[0]);
     public String getName() { return "exit"; }
     public void setName(String name) { }
     public String[] getArguments() { return args.Arguments; }

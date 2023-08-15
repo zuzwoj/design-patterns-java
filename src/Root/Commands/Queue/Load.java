@@ -10,7 +10,7 @@ import java.util.List;;
 
 public class Load extends Root.Commands.Generic {
     private Queue<Root.Commands.Generic> commandQueue;
-    private Root.Interfaces.Command.CommandArguments args;
+    private Root.Interfaces.Command.CommandArguments args = new Root.Interfaces.Command.CommandArguments("", new String[0]);
     HashMap<String, Root.Interfaces.Collection<Root.Interfaces.Object>> map;
 
     public Load(Queue<Root.Commands.Generic> commandQueue, HashMap<String, Root.Interfaces.Collection<Root.Interfaces.Object>> map) { 

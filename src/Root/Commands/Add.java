@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Add extends Generic{
-    private Root.Interfaces.Command.CommandArguments args;
+    private Root.Interfaces.Command.CommandArguments args = new Root.Interfaces.Command.CommandArguments("", new String[0]);
     public HashMap<String, Root.Interfaces.Collection<Root.Interfaces.Object>> map;
     public ArrayList<String> modifiers = new ArrayList<String>();
 
