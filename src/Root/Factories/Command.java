@@ -26,17 +26,15 @@ public class Command {
         Root.Commands.Generic result = null;
         for (Root.Commands.Generic elem : availableCommands) {
             if (elem.getName().equals(commandArguments.CommandName)) {
-                result = elem;
+                result = (Root.Commands.Generic)elem.clone();
                 break;
             }
         }
-        Root.Commands.Generic command;
-        if (result != null) command = (Root.Commands.Generic) result.clone();
-        else {
-            command = new Root.Commands.NotFound(); 
-            command.setName(commandArguments.CommandName);
+        if (result == null) {
+            result = new Root.Commands.NotFound(); 
+            result.setName(commandArguments.CommandName);
         }
-        command.setArguments(commandArguments.Arguments);
-        return command;
+        result.setArguments(commandArguments.Arguments);
+        return result;
     }
 }

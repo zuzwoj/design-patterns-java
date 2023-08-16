@@ -14,8 +14,13 @@ public class Export extends Root.Commands.Generic {
     public String getName() { return "queue export"; }
     public void setName(String name) { }
     public String[] getArguments() { return args.Arguments; }
-    public void setArguments(String[] args) {this.args.Arguments = args; }
     public boolean Dialogue() { return true; }
+
+    public void setArguments(String[] args) 
+    {
+        this.args = new Root.Interfaces.Command.CommandArguments(getName(), new String[0]);
+        this.args.Arguments = args;
+    }
 
     public void Execute() {
         if (getArguments().length != 2 && getArguments().length != 1) {

@@ -7,6 +7,7 @@ public abstract class Generic implements Root.Interfaces.Command, Cloneable {
     public abstract void setArguments(String[] args);
     public abstract void Execute();
     public abstract boolean Dialogue();
+    
     public Object clone() 
     { 
         try {
@@ -14,6 +15,7 @@ public abstract class Generic implements Root.Interfaces.Command, Cloneable {
         } catch (Exception e) { }
         return null;
     }
+
     public String ToString() {
         StringBuilder sb = new StringBuilder(getName());
         sb.append(" ");

@@ -12,9 +12,14 @@ public class Add extends Generic{
     public String getName() { return "add"; }
     public void setName(String name) { }
     public String[] getArguments() { return args.Arguments; }
-    public void setArguments(String[] args) {this.args.Arguments = args; }
     public Add() { }
     public Add(HashMap<String, Root.Interfaces.Collection<Root.Interfaces.Object>> map) { this.map = map; }
+
+    public void setArguments(String[] args) 
+    {
+        this.args = new Root.Interfaces.Command.CommandArguments(getName(), new String[0]);
+        this.args.Arguments = args;
+    }
 
     public boolean Dialogue() {
         if (getArguments().length != 2) {

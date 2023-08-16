@@ -5,7 +5,7 @@ import java.util.HashMap;
 
 public class Processor {
     private Root.Factories.Command commandFactory;
-    public ArrayBlockingQueue<Root.Commands.Generic> commandQueue = new ArrayBlockingQueue<Root.Commands.Generic>(1);
+    public ArrayBlockingQueue<Root.Commands.Generic> commandQueue = new ArrayBlockingQueue<Root.Commands.Generic>(100);
 
     public Processor(HashMap<String, Root.Interfaces.Collection<Root.Interfaces.Object>> map) 
     { 
@@ -44,6 +44,8 @@ public class Processor {
             }
         }
         sub.add(together.substring(prev, together.length() - prev));
-        return new Root.Interfaces.Command.CommandArguments(name, (String[])sub.toArray());
+        String[] ar = new String[sub.size()];
+        for (int i = 0; i < sub.size(); ++i) ar[i] = sub.get(i);
+        return new Root.Interfaces.Command.CommandArguments(name, ar);
     }
 }

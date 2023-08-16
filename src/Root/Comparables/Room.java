@@ -8,7 +8,10 @@ public abstract class Room implements Root.Interfaces.Object, Root.Interfaces.Ro
     public abstract Root.Primary.Employee getResponsibleEmployee();
     public abstract void setResponsibleEmployee(Root.Primary.Employee employee);
     public abstract Root.Interfaces.Object clone();
-    public String Print() { return "ROOM: number: " + getNumber() + ", employee: " + getResponsibleEmployee(); }
+    
+    public String Print() { 
+        return "ROOM: number: " + getNumber() + ", employee: " + getResponsibleEmployee().getName() + " " + getResponsibleEmployee().getSurname(); 
+    }
 
     public boolean meetsCondition(String condition) {
         String[] sub = condition.split("><=");
