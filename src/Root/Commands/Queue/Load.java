@@ -36,28 +36,24 @@ public class Load extends Root.Commands.Generic {
         String extension = "";
         int i = getArguments()[0].lastIndexOf('.');
         if (i > 0) extension = getArguments()[0].substring(i+1);
-        switch (extension) {
-            case ".txt":
-                try {
-                    Root.Processor pro = new Root.Processor(map);
-                    List<String> lines = Files.readAllLines(Paths.get(getArguments()[0]));
-                    for (var elem : lines) pro.Process(elem.split(" "));
-                    for (int j = 0; j < pro.commandQueue.size(); ++j) commandQueue.add(pro.commandQueue.remove());
-                } catch (Exception e) {}
-                break;
-            case ".xml":
-                try {
-                    XMLDecoder d = new XMLDecoder( new BufferedInputStream( new FileInputStream(getArguments()[0])));
-                    @SuppressWarnings("unchecked")
-                    Queue<Root.Commands.Generic> result = (Queue<Root.Commands.Generic>)d.readObject();
-                    d.close();
-                    this.commandQueue.clear();
-                    for (var elem : result) this.commandQueue.add(elem);
-                } catch (Exception e) {}
-                break;
-            default:
-                System.out.println("File is not valid");
-            break;
+        if (extension.equals(".txt")) {
+            try {
+                Root.Processor pro = new Root.Processor(map);
+                List<String> lines = Files.readAllLines(Paths.get(getArguments()[0]));
+                for (var elem : lines) pro.Process(elem.split(" "));
+                for (int j = 0; j < pro.commandQueue.size(); ++j) commandQueue.add(pro.commandQueue.remove());
+            } catch (Exception e) {}
         }
+        else if (extension.equals(".xml")) {
+            try {
+                XMLDecoder d = new XMLDecoder( new BufferedInputStream( new FileInputStream(getArguments()[0])));
+                @SuppressWarnings("unchecked")
+                Queue<Root.Commands.Generic> result = (Queue<Root.Commands.Generic>)d.readObject();
+                d.close();
+                this.commandQueue.clear();
+                for (var elem : result) this.commandQueue.add(elem);
+            } catch (Exception e) {}
+        }
+        else System.out.println("File is not valid");
     }
 }

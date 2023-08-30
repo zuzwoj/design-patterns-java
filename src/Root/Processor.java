@@ -39,11 +39,11 @@ public class Processor {
         int prev = 0;
         for (int i = 0; i < together.length(); ++i) {
             if (together.charAt(i) == ' ') if (i != 0 && i !=together.length() - 1) if (together.charAt(i - 1) != '"' || together.charAt(i + 1) != '"') {
-                sub.add(together.substring(prev, i - prev));
+                sub.add(together.substring(prev, i));
                 prev = i + 1;
             }
         }
-        sub.add(together.substring(prev, together.length() - prev));
+        sub.add(together.substring(prev, together.length()));
         String[] ar = new String[sub.size()];
         for (int i = 0; i < sub.size(); ++i) ar[i] = sub.get(i);
         return new Root.Interfaces.Command.CommandArguments(name, ar);

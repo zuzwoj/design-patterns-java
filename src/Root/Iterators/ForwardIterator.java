@@ -8,8 +8,8 @@ public class ForwardIterator<T> extends Iterator<T> {
     }
     public boolean MoveNext() {
         if (collection.Last() == null) return false;
-        if (collection.Last().equals(current)) return false;
         current = collection.Next(current);
+        if (current == null) return false;
         ++index;
         return true;
     }

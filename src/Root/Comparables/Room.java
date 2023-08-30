@@ -14,28 +14,24 @@ public abstract class Room implements Root.Interfaces.Object, Root.Interfaces.Ro
     }
 
     public boolean meetsCondition(String condition) {
-        String[] sub = condition.split("><=");
+        String[] sub = condition.split("[><=]+");
         if (sub.length != 2) return false;
-        switch (sub[0]) {
-            case "number":
-                switch (condition.charAt(sub[0].length())) {
-                    case '>': return getNumber() > Integer.parseInt(sub[1]);
-                    case '<': return getNumber() < Integer.parseInt(sub[1]);
-                    case '=': return getNumber() == Integer.parseInt(sub[1]);
-                }
-                break;
-            case "employee":
-                if (condition.charAt(sub[0].length()) == '=') return getResponsibleEmployee().getName() + " " + getResponsibleEmployee().getSurname() == sub[1];
-                break;
-            default:
-                return false;
+        if (sub[0].equals("number")) {
+            switch (condition.charAt(sub[0].length())) {
+                case '>': return getNumber() > Integer.parseInt(sub[1]);
+                case '<': return getNumber() < Integer.parseInt(sub[1]);
+                case '=': return getNumber() == Integer.parseInt(sub[1]);
+            }
+        }
+        else if (sub[0].equals("employee") && condition.charAt(sub[0].length()) == '=') {
+            return (getResponsibleEmployee().getName() + " " + getResponsibleEmployee().getSurname()).equals(sub[1]);
         }
         return false;
     }
 
     public void setProperty(String key, String value) {
-        if (key == "number") setNumber(Integer.parseInt(value));
-        else if (key == "employee") 
+        if (key.equals("number")) setNumber(Integer.parseInt(value));
+        else if (key.equals("employee")) 
         {
             String[] sub = value.split(" ");
             setResponsibleEmployee(new Root.Primary.Employee(sub[0], sub[1]));

@@ -57,8 +57,8 @@ public class Edit extends Generic {
         System.out.println("\n");
         String arg;
         Scanner in = new Scanner(System.in);
-        while ((arg = in.nextLine()) != "DONE") {
-            if (arg == "EXIT") {
+        while (!(arg = in.nextLine()).equals("DONE")) {
+            if (arg.equals("EXIT")) {
                 in.close();
                 return false;
             }

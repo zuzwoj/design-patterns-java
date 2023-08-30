@@ -31,7 +31,7 @@ public class Add extends Generic{
             System.out.println("There is no object of type " + getArguments()[0]);
             return false;
         }
-        if (getArguments()[1] != "base" && getArguments()[1] != "secondary") {
+        if (!getArguments()[1].equals("base") && !getArguments()[1].equals("secondary")) {
             System.out.println("Wrong arguments, try add <name_of_the_class> base|secondary");
             return false;
         }
@@ -41,8 +41,8 @@ public class Add extends Generic{
         System.out.print("\n");
         String arg;
         Console cnsl = System.console();
-        while ((arg = cnsl.readLine()) != "DONE") {
-            if (arg == "EXIT") return false;
+        while (!(arg = cnsl.readLine()).equals("DONE")) {
+            if (arg.equals("EXIT")) return false;
             String[] input = arg.split("=");
             if (!Arrays.asList(attr).contains(input[0])) System.out.println("Incorrect name of the field");
             else modifiers.add(arg);
